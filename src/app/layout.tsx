@@ -35,7 +35,20 @@ export interface EnterpriseProps {
 }
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  const { data } = await client.query({ query: GET_LAYOUT })
+  const { data, error } = await client.query({ query: GET_LAYOUT })
+
+  if (error) {
+    console.log('Fetch error: ', error.message)
+    return (
+      <html lang='pt-BR'>
+        <head>
+          <title>erro</title>
+        </head>
+        <body>{error.message}</body>
+      </html>
+    )
+  }
+
   const { name, shortDescription, socialShare }: EnterpriseProps = data.home.enterprise
 
   return (
