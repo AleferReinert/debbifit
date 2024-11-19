@@ -1,0 +1,26 @@
+import type { StoryObj, Meta } from '@storybook/react'
+import { expect, within } from '@storybook/test'
+import { {{pascalCase name}} } from './{{pascalCase name}}'
+
+const meta: Meta<typeof {{pascalCase name}}> =  {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+	args: {
+    children: 'children'
+  }
+} 
+
+export default meta
+type Story = StoryObj<typeof {{pascalCase name}}>
+
+export const Default: Story = {
+		name: '{{pascalCase name}}',
+    play: async ({canvasElement, step}) => {
+        const canvas = within(canvasElement)
+        const title = canvas.getByRole('heading', { name: 'children' })
+
+        await step('Render heading', () => {
+            expect(title).toBeInTheDocument()
+        })
+    }
+}

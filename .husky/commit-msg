@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+if ! npx --no-install commitlint --edit "$1"; then
+  echo -e "Mensagem de commit inválida!\nExecute \033[1mgit commit\033[0m para selecionar uma mensagem válida."
+  exit 1
+fi
+
+# Se a mensagem de commit for válida, roda lint e test
+npm run lint && npm run test
+if [ $? -ne 0 ]; then
+  echo "Erro no lint ou testes falharam. Commit cancelado."
+  exit 1
+fi

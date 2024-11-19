@@ -1,0 +1,7 @@
+# Arquivos que não precisam ser formatados
+.github
+.husky
+.next
+build
+node_modules
+plop-templates
