@@ -4,15 +4,21 @@ import { ComponentProps, ReactNode } from 'react'
 interface ButtonLinkProps extends ComponentProps<'a'> {
   children: ReactNode
   href: string
+  size?: 'sm' | 'default'
 }
 
-export function ButtonLink({ children, href, className }: ButtonLinkProps) {
+export function ButtonLink({ children, href, className, size = 'default' }: ButtonLinkProps) {
+  const sizes = {
+    default: '',
+    sm: 'text-sm'
+  }
+
   return (
     <Link
       href={href}
-      className={`${className || ''} inline-flex items-center gap-2 font-semibold py-3 px-5 
+      className={`${className || ''} ${sizes[size]} py-3 px-5 inline-flex items-center gap-2 font-semibold  
 				bg-primary-500 rounded-lg transition 
-				hover:animate-buzz hover:bg-primary-700 focus:bg-primary-900
+				hover:animate-buzz hover:bg-primary-700 focus:bg-primary-900 tracking-wide
 			`}
     >
       {children}

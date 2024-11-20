@@ -19,8 +19,8 @@ export default async function Page() {
   const { data, error } = await client.query({ query: GET_HOME })
 
   if (error) {
-    console.log('Fetch error: ', error.message)
-    return <p>deu ruim</p>
+    console.error(error)
+    throw new Error('Ocorreu um erro ao buscar os dados, tente novamente mais tarde.')
   }
 
   const { banner, sectionBenefits, sectionPlans, faq, enterprise }: HomeProps = data.home

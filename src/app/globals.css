@@ -16,3 +16,20 @@ svg:focus {
 li {
   @apply list-none;
 }
+
+.global-error {
+  font-family: Arial, sans-serif;
+  @apply container py-12 px-8;
+
+  h1 {
+    @apply text-3xl font-bold mb-1;
+  }
+
+  p {
+    @apply mb-6;
+  }
+
+  button {
+    @apply bg-primary-500 font-bold text-white py-2 px-4 rounded-lg transition hover:bg-primary-700 focus:bg-primary-900;
+  }
+}
