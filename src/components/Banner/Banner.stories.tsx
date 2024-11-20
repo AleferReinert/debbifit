@@ -27,7 +27,7 @@ export const Default: Story = {
 
       expect(title).toContainHTML(args.title)
       expect(italic).toHaveStyle('font-family: Merienda, cursive')
-      expect(strong).toHaveStyle({ color: theme.primary[500] })
+      expect(strong).toHaveStyle({ color: theme.primary[600] })
     })
 
     await step('Description', () => {

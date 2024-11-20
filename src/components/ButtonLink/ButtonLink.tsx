@@ -16,9 +16,9 @@ export function ButtonLink({ children, href, className, size = 'default' }: Butt
   return (
     <Link
       href={href}
-      className={`${className || ''} ${sizes[size]} py-3 px-5 inline-flex items-center gap-2 font-semibold  
+      className={`${className || ''} ${sizes[size]} py-3 px-5 inline-flex items-center gap-2 font-semibold text-white 
 				bg-primary-600 rounded-lg transition 
-				hover:animate-buzz hover:bg-primary-700 focus:bg-primary-800 tracking-wide
+				hover:animate-buzz hover:bg-primary-700 focus:bg-primary-800
 			`}
     >
       {children}

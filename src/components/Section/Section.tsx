@@ -14,7 +14,7 @@ export function Section({ children, title }: SectionProps) {
         <h2
           className='
 						text-center text-3xl font-heading font-bold text-white py-10 
-						[&_strong]:text-primary-500
+						[&_strong]:text-primary-600
 						lg:text-4xl lg:py-14
 					'
           dangerouslySetInnerHTML={{ __html: replaceTags({ text: title, tagsToReplace: ['p'], replaceBy: 'span' }) }}

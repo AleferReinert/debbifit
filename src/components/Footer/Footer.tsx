@@ -26,7 +26,7 @@ export function Footer({ phone, email, facebook, instagram, linkedin, whatsapp, 
   return (
     <footer className='py-6 text-center sm:text-left'>
       <Container>
-        <h4 className='font-semibold mb-2 border-l-2 leading-none pl-2 border-primary-500'>{name}</h4>
+        <h4 className='font-semibold mb-2 border-l-2 leading-none pl-2 border-primary-600'>{name}</h4>
         <div className='sm:flex justify-between items-center space-y-6'>
           <div className='space-y-1'>
             <p>

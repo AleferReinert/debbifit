@@ -29,7 +29,7 @@ export function Banner({ title, description, background, floatImg, label, url }:
       <Container className='relative py-16 md:py-20 lg:py-28'>
         <div className='z-10 relative'>
           <h1
-            className='font-bold text-3xl sm:text-4xl lg:text-5xl max-w-[28rem] lg:max-w-[38rem] [&_strong]:text-primary-500 [&_i]:font-heading [&>span]:block'
+            className='font-bold text-3xl sm:text-4xl lg:text-5xl max-w-[28rem] lg:max-w-[38rem] [&_strong]:text-primary-600 [&_i]:font-heading [&>span]:block'
             dangerouslySetInnerHTML={{ __html: replaceTags({ text: title, tagsToReplace: ['p'], replaceBy: 'span' }) }}
           />
           <div

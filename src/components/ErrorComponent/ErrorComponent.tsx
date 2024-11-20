@@ -16,7 +16,7 @@ export function ErrorComponent({
 }: ErrorComponentProps) {
   return (
     <Container>
-      <div className='my-10 border-l-2 pl-4 border-primary-500'>
+      <div className='my-10 border-l-2 pl-4 border-primary-600'>
         <h1 className='font-bold text-3xl mb-2'>{title}</h1>
         <p dangerouslySetInnerHTML={{ __html: description! }} />
       </div>
