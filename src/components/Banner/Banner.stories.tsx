@@ -15,8 +15,10 @@ const meta: Meta<typeof Banner> = {
 export default meta
 type Story = StoryObj<typeof Banner>
 
-export const Default: Story = {
-  name: 'Banner',
+export const XSmall: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'xs' }
+  },
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement)
 
@@ -41,17 +43,111 @@ export const Default: Story = {
       expect(buttonLink).toHaveAttribute('href', args.url)
     })
 
-    await step('Background image', () => {
-      const section = canvas.getByTestId('BannerComponent')
+    await step('Without float image', async () => {
       waitFor(() => {
-        expect(section.style.backgroundImage).not.toBe('')
+        const floatImg = canvas.queryByRole('img')
+        expect(floatImg).not.toBeInTheDocument()
       })
     })
 
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.formats.xsmall.url}")`)
+      })
+    })
+  }
+}
+
+export const small: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'sm' }
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+
+    await step('Without float image', async () => {
+      waitFor(() => {
+        const floatImg = canvas.queryByRole('img')
+        expect(floatImg).not.toBeInTheDocument()
+      })
+    })
+
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.formats.small.url}")`)
+      })
+    })
+  }
+}
+
+export const medium: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'md' }
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+
     await step('Float image', async () => {
       const floatImg = canvas.getByRole('img')
-      console.log(floatImg)
       expect(floatImg.getAttribute('src')).toContain(args.floatImg.url)
+    })
+
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.formats.medium.url}")`)
+      })
+    })
+  }
+}
+
+export const large: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'lg' }
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.formats.large.url}")`)
+      })
+    })
+  }
+}
+
+export const XLarge: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'xl' }
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.formats.xlarge!.url}")`)
+      })
+    })
+  }
+}
+
+export const xxlarge: Story = {
+  name: '2X Large',
+  parameters: {
+    viewport: { defaultViewport: '2xl' }
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section).toHaveStyle(`background-image: url("${args.background.url}")`)
+      })
     })
   }
 }

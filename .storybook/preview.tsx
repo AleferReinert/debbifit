@@ -57,15 +57,15 @@ const preview: Preview = {
         xl: {
           name: 'Tailwind xl (1280)',
           styles: {
-            width: '1920px',
-            height: '1080px'
+            width: '1280px',
+            height: '100%'
           }
         },
         '2xl': {
           name: 'Tailwind 2xl (1536)',
           styles: {
             width: '1536px',
-            height: '1080px'
+            height: '100%'
           }
         },
         responsive: {

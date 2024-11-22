@@ -17,6 +17,10 @@ export interface BannerProps {
 
 export function Banner({ title, description, background, floatImg, label, url }: BannerProps) {
   const backgroundData = GetResponsiveImage({ image: background })
+  const floatImgWidth = 279 // Resolution: medium
+  const floatImgHeight = Math.round((floatImgWidth / 4) * 5) // Proporção: 4:5
+  console.log('floatImgWidth: ', floatImgWidth)
+  console.log('floatImgHeight: ', floatImgHeight)
 
   return (
     <section
@@ -46,8 +50,8 @@ export function Banner({ title, description, background, floatImg, label, url }:
             role='img'
             src={floatImg.url}
             alt=''
-            width={500}
-            height={625}
+            width={floatImgWidth}
+            height={floatImgHeight}
             quality={100}
             priority
             className='object-contain'

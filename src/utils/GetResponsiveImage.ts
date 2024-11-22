@@ -26,18 +26,24 @@ interface GetResponsiveImageProps {
 }
 
 export function GetResponsiveImage({ image }: GetResponsiveImageProps) {
-  const [screenWidth, setScreenWidth] = useState(0)
-  useEffect(() => setScreenWidth(window.screen.width), [])
+  const [resolution, setResolution] = useState(document.body.offsetWidth)
+  const bodyWidth = document.body.offsetWidth
 
-  if (screenWidth <= 320) {
+  useEffect(() => {
+    setResolution(bodyWidth)
+    // console.log('body: ', bodyWidth)
+    // console.log('resolution: ', resolution)
+  }, [bodyWidth])
+
+  if (resolution <= 320) {
     return image.formats.xsmall
-  } else if (screenWidth <= 640) {
+  } else if (resolution <= 640) {
     return image.formats.small
-  } else if (screenWidth <= 768) {
+  } else if (resolution <= 768) {
     return image.formats.medium
-  } else if (screenWidth <= 1024) {
+  } else if (resolution <= 1024) {
     return image.formats.large
-  } else if (screenWidth <= 1280) {
+  } else if (resolution <= 1280) {
     return image.formats.xlarge
   }
 
