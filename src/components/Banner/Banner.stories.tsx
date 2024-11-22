@@ -23,24 +23,30 @@ export const XSmall: Story = {
     const canvas = within(canvasElement)
 
     await step('Title', () => {
-      const title = canvas.getByRole('heading', { level: 1 })
-      const italic = document.querySelector('h1>i')
-      const strong = document.querySelector('h1>strong')
+      waitFor(() => {
+        const title = canvas.getByRole('heading', { level: 1 })
+        const italic = document.querySelector('h1>i')
+        const strong = document.querySelector('h1>strong')
 
-      expect(title).toContainHTML(args.title)
-      expect(italic).toHaveStyle('font-family: Merienda, cursive')
-      expect(strong).toHaveStyle({ color: theme.primary[600] })
+        expect(title).toContainHTML(args.title)
+        expect(italic).toHaveStyle('font-family: Merienda, cursive')
+        expect(strong).toHaveStyle({ color: theme.primary[600] })
+      })
     })
 
     await step('Description', () => {
-      const description = canvas.getByTestId('banner-description')
-      expect(description).toContainHTML(args.description)
+      waitFor(() => {
+        const description = canvas.getByTestId('banner-description')
+        expect(description).toContainHTML(args.description)
+      })
     })
 
     await step('Button link', () => {
-      const buttonLink = canvas.getByRole('link')
-      expect(buttonLink).toHaveTextContent(args.label)
-      expect(buttonLink).toHaveAttribute('href', args.url)
+      waitFor(() => {
+        const buttonLink = canvas.getByRole('link')
+        expect(buttonLink).toHaveTextContent(args.label)
+        expect(buttonLink).toHaveAttribute('href', args.url)
+      })
     })
 
     await step('Without float image', async () => {
@@ -51,8 +57,8 @@ export const XSmall: Story = {
     })
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.formats.xsmall.url}")`)
       })
     })
@@ -74,8 +80,8 @@ export const small: Story = {
     })
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.formats.small.url}")`)
       })
     })
@@ -90,13 +96,15 @@ export const medium: Story = {
     const canvas = within(canvasElement)
 
     await step('Float image', async () => {
-      const floatImg = canvas.getByRole('img')
-      expect(floatImg.getAttribute('src')).toContain(args.floatImg.url)
+      waitFor(() => {
+        const floatImg = canvas.getByRole('img')
+        expect(floatImg.getAttribute('src')).toContain(args.floatImg.url)
+      })
     })
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.formats.medium.url}")`)
       })
     })
@@ -111,8 +119,8 @@ export const large: Story = {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.formats.large.url}")`)
       })
     })
@@ -127,8 +135,8 @@ export const XLarge: Story = {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.formats.xlarge!.url}")`)
       })
     })
@@ -144,8 +152,8 @@ export const xxlarge: Story = {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
-      const section = canvas.getByTestId('BannerComponent')
       waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
         expect(section).toHaveStyle(`background-image: url("${args.background.url}")`)
       })
     })

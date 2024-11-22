@@ -1,9 +1,11 @@
 'use client'
 import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
+import { Loading } from 'components/Loading/Loading'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { IoFitness } from 'react-icons/io5'
-import { GetResponsiveImage, UploadImageProps } from 'utils/GetResponsiveImage'
+import { UploadImageProps } from 'types/strapiContent'
 import { replaceTags } from 'utils/replaceTags'
 
 export interface BannerProps {
@@ -16,18 +18,34 @@ export interface BannerProps {
 }
 
 export function Banner({ title, description, background, floatImg, label, url }: BannerProps) {
-  const backgroundData = GetResponsiveImage({ image: background })
   const floatImgWidth = 279 // Resolution: medium
-  const floatImgHeight = Math.round((floatImgWidth / 4) * 5) // Proporção: 4:5
-  console.log('floatImgWidth: ', floatImgWidth)
-  console.log('floatImgHeight: ', floatImgHeight)
+  const floatImgHeight = Math.round((floatImgWidth / 4) * 5) // Proportion: 4:5
+  const [bgUrl, setBgUrl] = useState('')
+
+  useEffect(() => {
+    const resolution = document.body.offsetWidth
+
+    if (resolution <= 320) {
+      setBgUrl(background.formats.xsmall.url)
+    } else if (resolution <= 640) {
+      setBgUrl(background.formats.small.url)
+    } else if (resolution <= 768) {
+      setBgUrl(background.formats.medium.url)
+    } else if (resolution <= 1024) {
+      setBgUrl(background.formats.large.url)
+    } else if (resolution <= 1280) {
+      setBgUrl(background.formats.xlarge!.url)
+    } else {
+      setBgUrl(background.url)
+    }
+  }, [bgUrl])
+
+  if (!bgUrl) {
+    return <Loading />
+  }
 
   return (
-    <section
-      data-testid='BannerComponent'
-      className='relative bg-cover'
-      style={{ backgroundImage: `url(${backgroundData?.url})` }}
-    >
+    <section data-testid='BannerComponent' className='relative bg-cover' style={{ backgroundImage: `url(${bgUrl})` }}>
       <Container className='relative flex gap-10 items-center'>
         <div className='z-10 relative py-16 md:py-20 lg:py-28 md:w-3/5'>
           <h1
