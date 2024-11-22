@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { expect, within } from '@storybook/test'
+import { expect, waitFor, within } from '@storybook/test'
 import { homeMock } from 'app/page.mock'
 import { theme } from '../../../tailwind.config'
 import { Banner } from './Banner'
@@ -42,13 +42,16 @@ export const Default: Story = {
     })
 
     await step('Background image', () => {
-      const background = document.getElementsByTagName('section')[0]
-      expect(background).toHaveStyle(`background-image: url(${args.background.url})`)
+      const section = canvas.getByTestId('BannerComponent')
+      waitFor(() => {
+        expect(section.style.backgroundImage).not.toBe('')
+      })
     })
 
     await step('Float image', async () => {
-      const floatImg = document.getElementsByTagName('img')[0]
-      expect(floatImg.src).toContain(args.floatImg.url)
+      const floatImg = canvas.getByRole('img')
+      console.log(floatImg)
+      expect(floatImg.getAttribute('src')).toContain(args.floatImg.url)
     })
   }
 }

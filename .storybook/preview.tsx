@@ -61,6 +61,13 @@ const preview: Preview = {
             height: '1080px'
           }
         },
+        '2xl': {
+          name: 'Tailwind 2xl (1536)',
+          styles: {
+            width: '1536px',
+            height: '1080px'
+          }
+        },
         responsive: {
           name: 'responsive',
           styles: {

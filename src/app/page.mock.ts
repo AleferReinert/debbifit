@@ -23,12 +23,63 @@ export const homeMock: mockProps = {
   },
   banner: {
     background: {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background.webp`
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background.webp`,
+      width: 1920,
+      height: 1080,
+      formats: {
+        xsmall: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xsmall.webp`,
+          width: 320,
+          height: 180
+        },
+        small: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-small.webp`,
+          width: 640,
+          height: 360
+        },
+        medium: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-medium.webp`,
+          width: 768,
+          height: 432
+        },
+        large: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-large.webp`,
+          width: 1024,
+          height: 576
+        },
+        xlarge: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xlarge.webp`,
+          width: 1280,
+          height: 720
+        }
+      }
     },
     floatImg: {
       url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
       width: 768,
-      height: 735
+      height: 735,
+      formats: {
+        xsmall: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-xsmall.webp`,
+          width: 256,
+          height: 320
+        },
+        small: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-small.webp`,
+          width: 512,
+          height: 640
+        },
+        medium: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-medium.webp`,
+          width: 614,
+          height: 768
+        },
+        large: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-large.webp`,
+          width: 819,
+          height: 1024
+        }
+      }
     },
     title: 'Transforme seu <i>físico</i> com nossa <strong>metodologia!</strong>',
     description:

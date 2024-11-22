@@ -15,6 +15,9 @@ export const GET_HOME = gql`
       banner {
         background {
           url
+          width
+          height
+          formats
         }
         floatImg {
           url
