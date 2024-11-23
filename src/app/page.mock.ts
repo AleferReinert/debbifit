@@ -1,92 +1,93 @@
 import { EnterpriseProps } from 'app/layout'
+import { BannerProps } from 'components/Banner/Banner'
+import { GET_BANNER } from 'graphql/GetBanner'
 import { GET_HOME } from 'graphql/GetHome'
 import { HomeProps } from './page'
 
-interface mockProps extends HomeProps {
-  enterprise: EnterpriseProps
+export const enterpriseMock: EnterpriseProps = {
+  name: 'IgorFit - Sua consultoria fitness online e personalizada',
+  email: 'consultoria@igorfit.com.br',
+  phone: '47999558118',
+  shortDescription:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus amet as.',
+  socialShare: {
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/social-share.webp`
+  },
+  facebook: 'https://facebook.com',
+  instagram: 'https://instagram.com',
+  linkedin: 'https://linkedin.com',
+  whatsapp: '47999558118'
 }
 
-export const homeMock: mockProps = {
-  enterprise: {
-    name: 'IgorFit - Sua consultoria fitness online e personalizada',
-    email: 'consultoria@igorfit.com.br',
-    phone: '47999558118',
-    shortDescription:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus amet as.',
-    socialShare: {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/social-share.webp`
-    },
-    facebook: 'https://facebook.com',
-    instagram: 'https://instagram.com',
-    linkedin: 'https://linkedin.com',
-    whatsapp: '47999558118'
-  },
-  banner: {
-    background: {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background.webp`,
-      width: 1920,
-      height: 1080,
-      formats: {
-        xsmall: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xsmall.webp`,
-          width: 320,
-          height: 180
-        },
-        small: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-small.webp`,
-          width: 640,
-          height: 360
-        },
-        medium: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-medium.webp`,
-          width: 768,
-          height: 432
-        },
-        large: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-large.webp`,
-          width: 1024,
-          height: 576
-        },
-        xlarge: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xlarge.webp`,
-          width: 1280,
-          height: 720
-        }
+export const bannerMock: BannerProps = {
+  background: {
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background.webp`,
+    width: 1920,
+    height: 1080,
+    formats: {
+      xsmall: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xsmall.webp`,
+        width: 320,
+        height: 180
+      },
+      small: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-small.webp`,
+        width: 640,
+        height: 360
+      },
+      medium: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-medium.webp`,
+        width: 768,
+        height: 432
+      },
+      large: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-large.webp`,
+        width: 1024,
+        height: 576
+      },
+      xlarge: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/background-xlarge.webp`,
+        width: 1280,
+        height: 720
       }
-    },
-    floatImg: {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
-      width: 768,
-      height: 735,
-      formats: {
-        xsmall: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-xsmall.webp`,
-          width: 256,
-          height: 320
-        },
-        small: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-small.webp`,
-          width: 512,
-          height: 640
-        },
-        medium: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-medium.webp`,
-          width: 614,
-          height: 768
-        },
-        large: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-large.webp`,
-          width: 819,
-          height: 1024
-        }
-      }
-    },
-    title: 'Transforme seu <i>físico</i> com nossa <strong>metodologia!</strong>',
-    description:
-      '<p>Receba seu <strong>plano de dieta</strong> + <strong>treino 100% personalizado</strong> e um acompanhamento no whatsapp para garantir sua evolução.</p><p>Na minha carreira sempre fui reconhecido por ter feito muito com pouco. Ter tido <strong>resultados fora da média</strong> com poucos recursos. E é exatamente isso que vou passar dentro da minha consultoria.</p>',
-    label: 'Faça parte do nosso time',
-    url: 'https://google.com'
+    }
   },
+  floatImg: {
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
+    width: 768,
+    height: 735,
+    formats: {
+      xsmall: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-xsmall.webp`,
+        width: 256,
+        height: 320
+      },
+      small: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-small.webp`,
+        width: 512,
+        height: 640
+      },
+      medium: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-medium.webp`,
+        width: 614,
+        height: 768
+      },
+      large: {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-large.webp`,
+        width: 819,
+        height: 1024
+      }
+    }
+  },
+  title: '<p><i>Invista na sua saúde&nbsp;</i></p><p><i><strong>física </strong>e <strong>mental!</strong></i></p>',
+  description:
+    '<p>Receba seu <strong>plano de dieta</strong> + <strong>treino 100% personalizado</strong> e um acompanhamento no whatsapp para garantir sua evolução.</p><p>Na minha carreira sempre fui reconhecido por ter feito muito com pouco. Ter tido <strong>resultados fora da média</strong> com poucos recursos. E é exatamente isso que vou passar dentro da minha consultoria.</p>',
+  label: 'Faça parte do nosso time',
+  url: 'https://google.com'
+}
+
+export const homeMock: HomeProps = {
+  enterprise: enterpriseMock,
   sectionBenefits: {
     title: 'Entrando para o time você vai receber',
     benefits: [
@@ -174,7 +175,22 @@ export const homeMock: mockProps = {
   }
 }
 
-export const mocks = [
+export const bannerMocks = [
+  {
+    request: {
+      query: GET_BANNER
+    },
+    result: {
+      data: {
+        home: {
+          banner: bannerMock
+        }
+      }
+    }
+  }
+]
+
+export const homeMocks = [
   {
     request: {
       query: GET_HOME

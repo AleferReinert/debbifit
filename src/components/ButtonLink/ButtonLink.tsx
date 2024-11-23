@@ -9,14 +9,14 @@ interface ButtonLinkProps extends ComponentProps<'a'> {
 
 export function ButtonLink({ children, href, className, size = 'default' }: ButtonLinkProps) {
   const sizes = {
-    default: '',
-    sm: 'text-sm'
+    default: 'h-14',
+    sm: 'text-sm h-12'
   }
 
   return (
     <Link
       href={href}
-      className={`${className || ''} ${sizes[size]} py-3 px-5 inline-flex items-center gap-2 font-semibold text-white 
+      className={`${className || ''} ${sizes[size]} px-5 inline-flex items-center gap-2 font-semibold text-white 
 				bg-primary-600 rounded-lg transition 
 				hover:animate-buzz hover:bg-primary-700 focus:bg-primary-800
 			`}

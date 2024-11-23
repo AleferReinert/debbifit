@@ -1,15 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { expect, waitFor, within } from '@storybook/test'
-import { homeMock } from 'app/page.mock'
+import { bannerMock } from 'app/page.mock'
 import { theme } from '../../../tailwind.config'
 import { Banner } from './Banner'
 
 const meta: Meta<typeof Banner> = {
   title: 'Components/Banner',
-  component: Banner,
-  args: {
-    ...homeMock.banner
-  }
+  component: Banner
 }
 
 export default meta
@@ -25,10 +22,14 @@ export const XSmall: Story = {
     await step('Title', () => {
       waitFor(() => {
         const title = canvas.getByRole('heading', { level: 1 })
-        const italic = document.querySelector('h1>i')
-        const strong = document.querySelector('h1>strong')
+        const italic = document.querySelector('h1 i')
+        const strong = document.querySelector('h1 strong')
+        console.log(title)
 
-        expect(title).toContainHTML(args.title)
+        expect(title).toContainHTML(
+          '<span><i>Invista na sua saúde&nbsp;</i></span><span><i><strong>física </strong>e <strong>mental!</strong></i></span>'
+        )
+
         expect(italic).toHaveStyle('font-family: Merienda, cursive')
         expect(strong).toHaveStyle({ color: theme.primary[600] })
       })
@@ -37,15 +38,15 @@ export const XSmall: Story = {
     await step('Description', () => {
       waitFor(() => {
         const description = canvas.getByTestId('banner-description')
-        expect(description).toContainHTML(args.description)
+        expect(description).toContainHTML(bannerMock.description)
       })
     })
 
     await step('Button link', () => {
       waitFor(() => {
         const buttonLink = canvas.getByRole('link')
-        expect(buttonLink).toHaveTextContent(args.label)
-        expect(buttonLink).toHaveAttribute('href', args.url)
+        expect(buttonLink).toHaveTextContent(bannerMock.label)
+        expect(buttonLink).toHaveAttribute('href', bannerMock.url)
       })
     })
 
@@ -59,7 +60,7 @@ export const XSmall: Story = {
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.formats.xsmall.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xsmall.url}")`)
       })
     })
   }
@@ -69,7 +70,7 @@ export const small: Story = {
   parameters: {
     viewport: { defaultViewport: 'sm' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
     await step('Without float image', async () => {
@@ -82,7 +83,7 @@ export const small: Story = {
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.formats.small.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.small.url}")`)
       })
     })
   }
@@ -92,20 +93,20 @@ export const medium: Story = {
   parameters: {
     viewport: { defaultViewport: 'md' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
-    await step('Float image', async () => {
+    await step('Correct float image', async () => {
       waitFor(() => {
         const floatImg = canvas.getByRole('img')
-        expect(floatImg.getAttribute('src')).toContain(args.floatImg.url)
+        expect(floatImg.getAttribute('src')).toContain(bannerMock.floatImg.formats.small.url)
       })
     })
 
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.formats.medium.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
       })
     })
   }
@@ -115,13 +116,13 @@ export const large: Story = {
   parameters: {
     viewport: { defaultViewport: 'lg' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.formats.large.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.large.url}")`)
       })
     })
   }
@@ -131,13 +132,13 @@ export const XLarge: Story = {
   parameters: {
     viewport: { defaultViewport: 'xl' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.formats.xlarge!.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xlarge!.url}")`)
       })
     })
   }
@@ -148,13 +149,13 @@ export const xxlarge: Story = {
   parameters: {
     viewport: { defaultViewport: '2xl' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
     await step('Correct background', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${args.background.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.url}")`)
       })
     })
   }

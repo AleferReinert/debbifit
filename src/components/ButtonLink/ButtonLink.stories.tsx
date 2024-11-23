@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { expect, within } from '@storybook/test'
-import { homeMock } from 'app/page.mock'
+import { bannerMock } from 'app/page.mock'
 import { ButtonLink } from './ButtonLink'
 
 const meta: Meta<typeof ButtonLink> = {
   title: 'Components/ButtonLink',
   component: ButtonLink,
   args: {
-    children: homeMock.banner.label,
-    href: homeMock.banner.url
+    children: bannerMock.label,
+    href: bannerMock.url
   }
 }
 
@@ -24,6 +24,7 @@ export const Default: Story = {
       expect(buttonLink).toHaveAttribute('href', args.href)
       expect(buttonLink).toContainHTML(`${args.children}`)
       expect(buttonLink).not.toHaveClass('text-sm')
+      expect(buttonLink).toHaveClass('h-14')
     })
   }
 }
@@ -37,7 +38,7 @@ export const Small: Story = {
 
     await step('Small styles', () => {
       const buttonLink = canvas.getByRole('link')
-      expect(buttonLink).toHaveClass('text-sm')
+      expect(buttonLink).toHaveClass('text-sm h-12')
     })
   }
 }

@@ -12,23 +12,6 @@ export const GET_HOME = gql`
         linkedin
         whatsapp
       }
-      banner {
-        background {
-          url
-          width
-          height
-          formats
-        }
-        floatImg {
-          url
-          width
-          height
-        }
-        title
-        description
-        label
-        url
-      }
       sectionBenefits {
         title
         benefits {
