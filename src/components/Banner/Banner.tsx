@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/client'
 import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
 import { GET_BANNER } from 'graphql/GetBanner'
-import parse from 'html-react-parser'
 import Image from 'next/image'
 import { ComponentProps, useEffect, useState } from 'react'
 import { IoFitness } from 'react-icons/io5'
@@ -57,19 +56,23 @@ export function Banner() {
               {loading ? (
                 <Skeleton className='h-[108px]' />
               ) : (
-                <span>
-                  {parse(
-                    replaceTags({
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: replaceTags({
                       text: title,
                       tagsToReplace: ['p'],
                       replaceBy: 'span'
                     })
-                  )}
-                </span>
+                  }}
+                />
               )}
             </h1>
             <div data-testid='banner-description' className='flex flex-col gap-5 mt-5 mb-10'>
-              {loading ? <Skeleton className='h-[112px]' /> : <span>{parse(description)}</span>}
+              {loading ? (
+                <Skeleton className='h-[112px]' />
+              ) : (
+                <span dangerouslySetInnerHTML={{ __html: description }} />
+              )}
             </div>
 
             {loading ? (
