@@ -1,8 +1,7 @@
 import { Banner } from 'components/Banner/Banner'
-import { Faq, FaqProps } from 'components/Faq/Faq'
-import { Footer } from 'components/Footer/Footer'
-import { SectionBenefits, SectionBenefitsProps } from 'components/SectionBenefits/SectionBenefits'
-import { SectionPlans, SectionPlansProps } from 'components/SectionPlans/SectionPlans'
+import { FaqProps } from 'components/Faq/Faq'
+import { SectionBenefitsProps } from 'components/SectionBenefits/SectionBenefits'
+import { SectionPlansProps } from 'components/SectionPlans/SectionPlans'
 import { GET_HOME } from 'graphql/GetHome'
 import { client } from 'utils/client'
 import { EnterpriseProps } from './layout'
@@ -27,6 +26,7 @@ export default async function Page() {
   return (
     <>
       <Banner />
+      {/*
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />
       <SectionPlans title={sectionPlans.title} showDiscount={sectionPlans.showDiscount} plans={sectionPlans.plans} />
       <Faq title={faq.title} questions={faq.questions} />
@@ -39,6 +39,7 @@ export default async function Page() {
         linkedin={enterprise.linkedin}
         whatsapp={enterprise.whatsapp}
       />
+			 */}
     </>
   )
 }
