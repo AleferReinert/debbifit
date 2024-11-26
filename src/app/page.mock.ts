@@ -56,6 +56,7 @@ export const bannerMock: BannerProps = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
     width: 768,
     height: 735,
+    alternativeText: 'Mulher fazendo exercícios',
     formats: {
       xsmall: {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-xsmall.webp`,

@@ -25,8 +25,7 @@ function Skeleton({ className }: ComponentProps<'span'>) {
 export function Banner() {
   const { data, error, loading } = useQuery(GET_BANNER)
   const [bgUrl, setBgUrl] = useState('')
-  const { title, description, label, url, background, floatImg } = data?.home?.banner || {}
-  console.log(title)
+  const { title, description, label, url, background, floatImg }: BannerProps = data?.home?.banner || {}
 
   useEffect(() => {
     if (background) {
@@ -97,9 +96,9 @@ export function Banner() {
         <div className='hidden md:flex items-end md:w-2/5'>
           {!loading && (
             <Image
-              role='img'
+              aria-hidden={floatImg.alternativeText ? false : true}
               src={floatImg.formats.small.url}
-              alt=''
+              alt={floatImg.alternativeText || ''}
               width={floatImg.formats.small.width}
               height={floatImg.formats.small.height}
               quality={100}

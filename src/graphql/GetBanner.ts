@@ -15,6 +15,7 @@ export const GET_BANNER = gql`
           width
           height
           formats
+          alternativeText
         }
         title
         description

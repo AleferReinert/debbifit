@@ -96,10 +96,18 @@ export const medium: Story = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
-    await step('Correct float image', async () => {
+    await step('Correct float image with alt text or aria-hidden if without alt text', async () => {
       waitFor(() => {
-        const floatImg = canvas.getByRole('img')
-        expect(floatImg.getAttribute('src')).toContain(bannerMock.floatImg.formats.small.url)
+        // Se tiver o texto alternativo, aria-hidden é false, se não, true
+        if (bannerMock.floatImg.alternativeText) {
+          const floatImgWithAlternativeText = canvas.getByRole('img')
+          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.formats.small.url)
+          expect(floatImgWithAlternativeText).toHaveAttribute('alt', bannerMock.floatImg.alternativeText)
+          expect(floatImgWithAlternativeText).toHaveAttribute('aria-hidden', 'false')
+        } else {
+          const floatImgWithoutAlternativeText = document.querySelector('img[alt=""]')
+          expect(floatImgWithoutAlternativeText).toHaveAttribute('aria-hidden', 'true')
+        }
       })
     })
 
