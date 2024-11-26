@@ -16,7 +16,7 @@ export const XSmall: Story = {
   parameters: {
     viewport: { defaultViewport: 'xs' }
   },
-  play: async ({ canvasElement, step, args }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
     await step('Title', () => {
@@ -57,10 +57,10 @@ export const XSmall: Story = {
       })
     })
 
-    await step('Correct background', () => {
+    await step('Background medium', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xsmall.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
       })
     })
   }
@@ -80,10 +80,10 @@ export const small: Story = {
       })
     })
 
-    await step('Correct background', () => {
+    await step('Background medium', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.small.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
       })
     })
   }

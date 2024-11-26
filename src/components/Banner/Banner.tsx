@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
 import { GET_BANNER } from 'graphql/GetBanner'
+import parse from 'html-react-parser'
 import Image from 'next/image'
 import { ComponentProps, useEffect, useState } from 'react'
 import { IoFitness } from 'react-icons/io5'
@@ -30,11 +31,7 @@ export function Banner() {
   useEffect(() => {
     if (background) {
       const resolution = document.body.offsetWidth
-      if (resolution <= 320) {
-        setBgUrl(background.formats.xsmall.url)
-      } else if (resolution <= 640) {
-        setBgUrl(background.formats.small.url)
-      } else if (resolution <= 768) {
+      if (resolution <= 768) {
         setBgUrl(background.formats.medium.url)
       } else if (resolution <= 1024) {
         setBgUrl(background.formats.large.url)
@@ -60,27 +57,19 @@ export function Banner() {
               {loading ? (
                 <Skeleton className='h-[108px]' />
               ) : (
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: replaceTags({
+                <span>
+                  {parse(
+                    replaceTags({
                       text: title,
                       tagsToReplace: ['p'],
                       replaceBy: 'span'
                     })
-                  }}
-                ></span>
+                  )}
+                </span>
               )}
             </h1>
             <div data-testid='banner-description' className='flex flex-col gap-5 mt-5 mb-10'>
-              {loading ? (
-                <Skeleton className='h-[112px]' />
-              ) : (
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: description
-                  }}
-                ></span>
-              )}
+              {loading ? <Skeleton className='h-[112px]' /> : <span>{parse(description)}</span>}
             </div>
 
             {loading ? (
