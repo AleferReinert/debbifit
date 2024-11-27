@@ -69,7 +69,7 @@ export const XSmall: Story = {
   }
 }
 
-export const small: Story = {
+export const Small: Story = {
   parameters: {
     viewport: { defaultViewport: 'sm' }
   },
@@ -85,7 +85,7 @@ export const small: Story = {
   }
 }
 
-export const medium: Story = {
+export const Medium: Story = {
   parameters: {
     viewport: { defaultViewport: 'md' }
   },
