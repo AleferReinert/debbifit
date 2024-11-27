@@ -97,7 +97,7 @@ export const Medium: Story = {
         // Se tiver o texto alternativo, aria-hidden é false, se não, true
         if (bannerMock.floatImg.alternativeText) {
           const floatImgWithAlternativeText = canvas.getByRole('img')
-          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.formats.small.url)
+          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.formats!.small.url)
           expect(floatImgWithAlternativeText).toHaveAttribute('alt', bannerMock.floatImg.alternativeText)
           expect(floatImgWithAlternativeText).toHaveAttribute('aria-hidden', 'false')
         } else {

@@ -1,6 +1,5 @@
 import { EnterpriseProps } from 'app/layout'
 import { BannerProps } from 'components/Banner/Banner'
-import { GET_BANNER } from 'graphql/GetBanner'
 import { GET_HOME } from 'graphql/GetHome'
 import { HomeProps } from './page'
 
@@ -176,21 +175,6 @@ export const homeMock: HomeProps = {
     ]
   }
 }
-
-export const bannerMocks = [
-  {
-    request: {
-      query: GET_BANNER
-    },
-    result: {
-      data: {
-        home: {
-          banner: bannerMock
-        }
-      }
-    }
-  }
-]
 
 export const homeMocks = [
   {

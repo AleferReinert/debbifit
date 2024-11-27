@@ -2,12 +2,12 @@ import { MockedProvider } from '@apollo/client/testing'
 import type { Preview } from '@storybook/react'
 import React from 'react'
 import '../src/app/globals.css'
-import { bannerMocks, homeMocks } from '../src/app/page.mock'
+import { homeMocks } from '../src/app/page.mock'
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <MockedProvider mocks={[...homeMocks, ...bannerMocks]} addTypename={false}>
+      <MockedProvider mocks={homeMocks} addTypename={false}>
         <Story />
       </MockedProvider>
     )
