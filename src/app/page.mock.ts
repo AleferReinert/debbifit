@@ -88,6 +88,7 @@ export const bannerMock: BannerProps = {
 }
 
 export const homeMock: HomeProps = {
+  banner: bannerMock,
   enterprise: enterpriseMock,
   sectionBenefits: {
     title: 'Entrando para o time você vai receber',

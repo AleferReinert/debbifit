@@ -1,4 +1,4 @@
-import { Banner } from 'components/Banner/Banner'
+import { Banner, BannerProps } from 'components/Banner/Banner'
 import { FaqProps } from 'components/Faq/Faq'
 import { SectionBenefitsProps } from 'components/SectionBenefits/SectionBenefits'
 import { SectionPlansProps } from 'components/SectionPlans/SectionPlans'
@@ -7,6 +7,7 @@ import { client } from 'utils/client'
 import { EnterpriseProps } from './layout'
 
 export interface HomeProps {
+  banner: BannerProps
   enterprise: EnterpriseProps
   sectionBenefits: SectionBenefitsProps
   sectionPlans: SectionPlansProps
@@ -21,11 +22,18 @@ export default async function Page() {
     throw new Error('Ocorreu um erro ao buscar os dados, tente novamente mais tarde.')
   }
 
-  const { sectionBenefits, sectionPlans, faq, enterprise }: HomeProps = data.home
+  const { banner, sectionBenefits, sectionPlans, faq, enterprise }: HomeProps = data.home
 
   return (
     <>
-      <Banner />
+      <Banner
+        title={banner.title}
+        description={banner.description}
+        label={banner.label}
+        url={banner.url}
+        floatImg={banner.floatImg}
+        background={banner.background}
+      />
       {/*
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />
       <SectionPlans title={sectionPlans.title} showDiscount={sectionPlans.showDiscount} plans={sectionPlans.plans} />

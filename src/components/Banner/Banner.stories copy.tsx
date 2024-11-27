@@ -6,10 +6,7 @@ import { Banner } from './Banner'
 
 const meta: Meta<typeof Banner> = {
   title: 'Components/Banner',
-  component: Banner,
-  args: {
-    ...bannerMock
-  }
+  component: Banner
 }
 
 export default meta
@@ -60,10 +57,10 @@ export const XSmall: Story = {
       })
     })
 
-    await step('Background', () => {
+    await step('Background medium', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
       })
     })
   }
@@ -80,6 +77,13 @@ export const small: Story = {
       waitFor(() => {
         const floatImg = canvas.queryByRole('img')
         expect(floatImg).not.toBeInTheDocument()
+      })
+    })
+
+    await step('Background medium', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
       })
     })
   }
@@ -104,6 +108,62 @@ export const medium: Story = {
           const floatImgWithoutAlternativeText = document.querySelector('img[alt=""]')
           expect(floatImgWithoutAlternativeText).toHaveAttribute('aria-hidden', 'true')
         }
+      })
+    })
+
+    await step('Correct background', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.medium.url}")`)
+      })
+    })
+  }
+}
+
+export const large: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'lg' }
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.large.url}")`)
+      })
+    })
+  }
+}
+
+export const XLarge: Story = {
+  parameters: {
+    viewport: { defaultViewport: 'xl' }
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xlarge!.url}")`)
+      })
+    })
+  }
+}
+
+export const xxlarge: Story = {
+  name: '2X Large',
+  parameters: {
+    viewport: { defaultViewport: '2xl' }
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
+
+    await step('Correct background', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.url}")`)
       })
     })
   }
