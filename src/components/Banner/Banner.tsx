@@ -48,13 +48,13 @@ export function Banner({ title, description, label, url, background, floatImg }:
         <div className='hidden md:flex items-end md:w-2/5'>
           <Image
             aria-hidden={floatImg.alternativeText ? false : true}
-            src={floatImg.formats!.small.url}
+            src={floatImg.formats.small.url}
             alt={floatImg.alternativeText || ''}
-            width={floatImg.formats!.small.width}
-            height={floatImg.formats!.small.height}
+            width={floatImg.width}
+            height={floatImg.height}
             quality={100}
             priority
-            className='object-contain aspect-[4/5]'
+            sizes='(max-width: 768px) 278px, (max-width: 1024px) 381px, 483px'
           />
         </div>
       </Container>

@@ -4,7 +4,6 @@ import { SectionBenefitsProps } from 'components/SectionBenefits/SectionBenefits
 import { SectionPlansProps } from 'components/SectionPlans/SectionPlans'
 import { GET_HOME } from 'graphql/GetHome'
 import { client } from 'utils/client'
-import { detectDevice } from 'utils/detectDevice'
 import { EnterpriseProps } from './layout'
 
 export interface HomeProps {
@@ -16,9 +15,6 @@ export interface HomeProps {
 }
 
 export default async function Page() {
-  const headers = await (await import('next/headers')).headers()
-  const userAgent = headers.get('user-agent') || 'Unknown'
-  const device = detectDevice(userAgent)
   const { data, error } = await client.query({ query: GET_HOME })
 
   if (error) {
@@ -27,7 +23,6 @@ export default async function Page() {
   }
 
   const { banner, sectionBenefits, sectionPlans, faq, enterprise }: HomeProps = data.home
-  const bannerBackground = device === 'desktop' ? banner.background : banner.background.formats!.small
 
   return (
     <>
@@ -37,7 +32,7 @@ export default async function Page() {
         label={banner.label}
         url={banner.url}
         floatImg={banner.floatImg}
-        background={bannerBackground}
+        background={banner.background}
       />
       {/*
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />

@@ -6,7 +6,7 @@ export interface ImageProps {
 }
 
 export interface UploadImageProps extends ImageProps {
-  formats?: {
+  formats: {
     xsmall: ImageProps
     small: ImageProps
     medium: ImageProps
