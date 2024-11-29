@@ -1,7 +1,6 @@
 import { Container } from 'components/Container/Container'
-import parse from 'html-react-parser'
 import { ReactNode } from 'react'
-import { replaceTags } from 'utils/replaceTags'
+import { replacePTagsWithSpanTags } from 'utils/replacePTagsWithSpanTags'
 
 interface SectionProps {
   title: string
@@ -18,9 +17,8 @@ export function Section({ children, title }: SectionProps) {
 						[&_strong]:text-primary-600
 						lg:text-4xl lg:py-14
 					'
-        >
-          {parse(replaceTags({ text: title, tagsToReplace: ['p'], replaceBy: 'span' }))}
-        </h2>
+          dangerouslySetInnerHTML={{ __html: replacePTagsWithSpanTags(title) }}
+        />
         {children}
       </Container>
     </section>

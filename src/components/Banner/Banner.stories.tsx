@@ -27,7 +27,6 @@ export const XSmall: Story = {
         const title = canvas.getByRole('heading', { level: 1 })
         const italic = document.querySelector('h1 i')
         const strong = document.querySelector('h1 strong')
-        console.log(title)
 
         expect(title).toContainHTML(
           '<span><i>Invista na sua saúde&nbsp;</i></span><span><i><strong>física </strong>e <strong>mental!</strong></i></span>'
@@ -60,12 +59,12 @@ export const XSmall: Story = {
       })
     })
 
-    // await step('Background mobile small', () => {
-    //   waitFor(() => {
-    //     const section = canvas.getByTestId('BannerComponent')
-    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
-    //   })
-    // })
+    await step('Background mobile small', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
+      })
+    })
   }
 }
 
@@ -83,12 +82,12 @@ export const Small: Story = {
       })
     })
 
-    // await step('Background desktop large', () => {
-    //   waitFor(() => {
-    //     const section = canvas.getByTestId('BannerComponent')
-    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
-    //   })
-    // })
+    await step('Background desktop large', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
+      })
+    })
   }
 }
 
