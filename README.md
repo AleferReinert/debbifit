@@ -94,3 +94,5 @@ Sem componente <Image /> e com background xsmall: 96%
 Sem background e floatImg como client component: 95%
 
 em produção: 29 de nov. de 2024, 11:17:37: 92%
+
+feat(Banner, BannerImages): create background mobile: 93

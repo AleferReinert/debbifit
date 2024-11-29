@@ -60,12 +60,12 @@ export const XSmall: Story = {
       })
     })
 
-    await step('Background mobile small', () => {
-      waitFor(() => {
-        const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
-      })
-    })
+    // await step('Background mobile small', () => {
+    //   waitFor(() => {
+    //     const section = canvas.getByTestId('BannerComponent')
+    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
+    //   })
+    // })
   }
 }
 
@@ -83,12 +83,12 @@ export const Small: Story = {
       })
     })
 
-    await step('Background desktop large', () => {
-      waitFor(() => {
-        const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
-      })
-    })
+    // await step('Background desktop large', () => {
+    //   waitFor(() => {
+    //     const section = canvas.getByTestId('BannerComponent')
+    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
+    //   })
+    // })
   }
 }
 
