@@ -32,7 +32,8 @@ export default async function Page() {
         label={banner.label}
         url={banner.url}
         floatImg={banner.floatImg}
-        background={banner.background}
+        backgroundDesktop={banner.backgroundDesktop}
+        backgroundMobile={banner.backgroundMobile}
       />
       {/*
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />

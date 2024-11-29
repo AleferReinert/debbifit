@@ -19,10 +19,10 @@ export const Default: Story = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
-    await step('Render heading', () => {
+    await step('Render image', () => {
       waitFor(() => {
         const floatImg = canvas.getByRole('img')
-        expect(floatImg).toBeInTheDocument()
+        expect(floatImg).toBeVisible()
       })
     })
   }

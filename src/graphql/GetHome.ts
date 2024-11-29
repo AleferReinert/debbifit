@@ -4,7 +4,13 @@ export const GET_HOME = gql`
   query Home {
     home {
       banner {
-        background {
+        backgroundDesktop {
+          url
+          width
+          height
+          formats
+        }
+        backgroundMobile {
           url
           width
           height

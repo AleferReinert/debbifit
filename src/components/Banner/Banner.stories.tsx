@@ -22,7 +22,7 @@ export const XSmall: Story = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
 
-    await step('Title', () => {
+    await step('Title as h1', () => {
       waitFor(() => {
         const title = canvas.getByRole('heading', { level: 1 })
         const italic = document.querySelector('h1 i')
@@ -60,12 +60,12 @@ export const XSmall: Story = {
       })
     })
 
-    // await step('Background xsmall', () => {
-    //   waitFor(() => {
-    //     const section = canvas.getByTestId('BannerComponent')
-    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xsmall.url}")`)
-    //   })
-    // })
+    await step('Background mobile small', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
+      })
+    })
   }
 }
 
@@ -80,6 +80,13 @@ export const Small: Story = {
       waitFor(() => {
         const floatImg = canvas.queryByRole('img')
         expect(floatImg).not.toBeInTheDocument()
+      })
+    })
+
+    await step('Background desktop large', () => {
+      waitFor(() => {
+        const section = canvas.getByTestId('BannerComponent')
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
       })
     })
   }
