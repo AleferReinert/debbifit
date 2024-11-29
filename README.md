@@ -82,3 +82,13 @@ npm run plop
 ## URL do Projeto
 
 Explore o projeto no link: [Consultoria Fitness](https://consultoria-fitness-online.vercel.app).
+
+## Registro de performance de Banner em celular
+
+Com sizes em <Image /> e server component sem fetch: 90%
+Sem sizes em <Image /> e server component sem fetch: 92%
+Sem sizes e quality 100 em <Image /> e server component sem fetch: 92%
+Sem componente <Image />: 94%
+Sem componente <Image /> e sem background: 99%
+Sem componente <Image /> e com background xsmall: 96%
+Sem background e floatImg como client component: 95%

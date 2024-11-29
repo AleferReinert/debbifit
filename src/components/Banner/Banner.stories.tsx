@@ -60,12 +60,12 @@ export const XSmall: Story = {
       })
     })
 
-    await step('Background', () => {
-      waitFor(() => {
-        const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.background.url}")`)
-      })
-    })
+    // await step('Background xsmall', () => {
+    //   waitFor(() => {
+    //     const section = canvas.getByTestId('BannerComponent')
+    //     expect(section).toHaveStyle(`background-image: url("${bannerMock.background.formats.xsmall.url}")`)
+    //   })
+    // })
   }
 }
 

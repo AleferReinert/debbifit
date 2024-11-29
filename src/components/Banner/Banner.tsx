@@ -1,6 +1,6 @@
+import { BannerImages } from 'components/BannerImages/BannerImages'
 import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
-import Image from 'next/image'
 import { IoFitness } from 'react-icons/io5'
 import { UploadImageProps } from 'types/strapiContent'
 import { replaceTags } from 'utils/replaceTags'
@@ -16,11 +16,7 @@ export interface BannerProps {
 
 export function Banner({ title, description, label, url, background, floatImg }: BannerProps) {
   return (
-    <section
-      data-testid='BannerComponent'
-      className='relative bg-cover'
-      style={{ backgroundImage: `url(${background.url})` }}
-    >
+    <section id='banner' data-testid='BannerComponent' className='relative bg-cover'>
       <Container className='relative md:flex gap-10'>
         <div className='z-10 flex items-center relative py-16 md:py-20 lg:py-28 md:w-3/5'>
           <div className='w-full'>
@@ -45,17 +41,8 @@ export function Banner({ title, description, label, url, background, floatImg }:
             </ButtonLink>
           </div>
         </div>
-        <div className='hidden md:flex items-end md:w-2/5'>
-          <Image
-            aria-hidden={floatImg.alternativeText ? false : true}
-            src={floatImg.formats.small.url}
-            alt={floatImg.alternativeText || ''}
-            width={floatImg.width}
-            height={floatImg.height}
-            quality={100}
-            priority
-            sizes='(max-width: 768px) 278px, (max-width: 1024px) 381px, 483px'
-          />
+        <div className='hidden items-end w-2/5 md:flex'>
+          <BannerImages floatImg={floatImg} background={background} />
         </div>
       </Container>
       <div className='absolute inset-0 top-auto h-20 bg-gradient-to-t from-secondary-theme to-transparent' />
