@@ -13,9 +13,13 @@ export interface BannerProps extends BannerImagesProps {
 
 export function Banner({ title, description, label, url, backgroundDesktop, backgroundMobile, floatImg }: BannerProps) {
   return (
-    <section id='banner' data-testid='BannerComponent' className='relative bg-cover'>
-      <Container className='relative md:flex gap-10'>
-        <div className='z-10 flex items-center relative py-16 md:py-20 lg:py-28 md:w-3/5'>
+    <section
+      id='banner'
+      data-testid='BannerComponent'
+      className='flex items-center relative bg-cover aspect-[9/16] sm:aspect-[16/9]'
+    >
+      <Container className='relative flex gap-10 h-full'>
+        <div className='z-10 flex items-center relative md:w-3/5'>
           <div className='w-full'>
             <h1
               className='font-bold text-3xl sm:text-4xl lg:text-5xl [&_strong]:text-primary-600 [&_i]:font-heading [&>span]:block'

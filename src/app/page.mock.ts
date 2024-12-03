@@ -113,7 +113,7 @@ export const bannerMock: BannerProps = {
   },
   title: '<p><i>Invista na sua saúde&nbsp;</i></p><p><i><strong>física </strong>e <strong>mental!</strong></i></p>',
   description:
-    '<p>Receba seu <strong>plano de dieta</strong> + <strong>treino 100% personalizado</strong> e um acompanhamento no whatsapp para garantir sua evolução.</p><p>Na minha carreira sempre fui reconhecido por ter feito muito com pouco. Ter tido <strong>resultados fora da média</strong> com poucos recursos. E é exatamente isso que vou passar dentro da minha consultoria.</p>',
+    '<p>Receba seu <strong>plano de dieta</strong> + <strong>treino 100% personalizado</strong> e um acompanhamento no whatsapp para garantir sua evolução.</p>',
   label: 'Faça parte do nosso time',
   url: 'https://google.com'
 }

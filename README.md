@@ -97,3 +97,4 @@ em produção: 29 de nov. de 2024, 11:17:37: 92%
 
 feat(Banner, BannerImages): create background mobile: 93
 feat(Banner): remove client component bannerimages: 90
+feat(Banner): re-add client component and refactor replace tags function: 92

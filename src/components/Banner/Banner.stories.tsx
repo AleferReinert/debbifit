@@ -82,10 +82,10 @@ export const Small: Story = {
       })
     })
 
-    await step('Background desktop large', () => {
+    await step('Background desktop small', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.large.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.small.url}")`)
       })
     })
   }

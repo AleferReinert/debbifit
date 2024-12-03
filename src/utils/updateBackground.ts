@@ -20,7 +20,7 @@ export function updateBackground({
 
   function setBg(background: ImageProps) {
     wrapper.style.backgroundImage = `url("${background.url}")`
-    console.log('orientation: ', orientation, ', sectionH: ', sectionHeight, ', xsmall: ', background)
+    // console.log('orientation: ', orientation, ', sectionH: ', sectionHeight, ', xsmall: ', background)
   }
 
   if (wrapper) {
