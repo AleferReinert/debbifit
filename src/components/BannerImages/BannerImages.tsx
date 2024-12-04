@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { UploadImageProps } from 'types/strapiContent'
-import { updateBackground } from 'utils/updateBackground'
+import { setBackgroundImage } from 'utils/setBackgroundImage'
 
 export interface BannerImagesProps {
   floatImg: UploadImageProps
@@ -12,27 +12,23 @@ export interface BannerImagesProps {
 
 export function BannerImages({ floatImg, backgroundDesktop, backgroundMobile }: BannerImagesProps) {
   const [screenWidth, setScreenWidth] = useState(0)
-  const [sectionHeight, setSectionHeight] = useState(0)
+  const isMobile = screenWidth < 768
 
   useEffect(() => {
     const section = document.getElementById('banner')
     function updateSectionBackground() {
       setScreenWidth(window.innerWidth)
-      if (section) {
-        setSectionHeight(section.clientHeight)
-      }
-      if (section && sectionHeight > 0) {
-        updateBackground({ backgroundDesktop, backgroundMobile, sectionHeight, screenWidth, wrapper: section })
+      if (section && screenWidth > 0) {
+        setBackgroundImage({ backgroundDesktop, backgroundMobile, wrapper: section })
       }
     }
     updateSectionBackground()
 
     window.addEventListener('resize', () => updateSectionBackground())
     return () => window.removeEventListener('resize', () => updateSectionBackground())
-  }, [sectionHeight])
+  }, [screenWidth])
 
-  // Not render floatImg on mobile
-  if (screenWidth < 768) return null
+  if (isMobile) return null
 
   return (
     <div data-testid='BannerImagesComponent' className='items-end w-2/5 flex'>

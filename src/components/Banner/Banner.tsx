@@ -27,7 +27,7 @@ export function Banner({ title, description, label, url, backgroundDesktop, back
             />
             <div
               data-testid='banner-description'
-              className='flex flex-col gap-5 mt-5 mb-10'
+              className='flex flex-col gap-5 mt-5 mb-10 text-lg'
               dangerouslySetInnerHTML={{ __html: description }}
             />
 

@@ -74,9 +74,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <meta property='og:image:width' content='1200' />
           <meta property='og:image:height' content='630' />
         </head>
-        <body
-          className={`${merienda.variable} ${inter.variable} font-sans bg-secondary-theme text-lg text-paragraph-theme`}
-        >
+        <body className={`${merienda.variable} ${inter.variable} font-sans bg-secondary-theme text-paragraph-theme`}>
           {children}
           <SpeedInsights />
         </body>
