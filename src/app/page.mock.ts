@@ -121,6 +121,41 @@ export const bannerMock: BannerProps = {
 export const homeMock: HomeProps = {
   banner: bannerMock,
   enterprise: enterpriseMock,
+  sectionObjectives: {
+    title: 'Somos para você que quer...',
+    objectives: [
+      {
+        objective: 'Descobrir uma nova maneira de amar o fitness e integrá-lo ao seu dia a dia com alegria'
+      },
+      {
+        objective: 'Transformar não só o corpo, mas também a mente, com resultados duradouros'
+      },
+      {
+        objective: 'Ter orientação personalizada que te apoie em cada etapa da sua jornada'
+      },
+      {
+        objective: 'Vencer barreiras e alcançar resultados que antes pareciam impossíveis'
+      },
+      {
+        objective: 'Adotar treinos criativos e diversificados, adaptados ao seu estilo de vida'
+      },
+      {
+        objective: 'Fortalecer não só os músculos, mas também a autoestima e confiança'
+      },
+      {
+        objective: 'Receber dicas exclusivas e atualizações frequentes para inovar nos treinos'
+      },
+      {
+        objective: 'Reencontrar o prazer de se alimentar bem, sem dietas restritivas ou sofrimento'
+      },
+      {
+        objective: 'Fazer parte de uma comunidade vibrante, cheia de pessoas que compartilham os mesmos objetivos'
+      },
+      {
+        objective: 'Construir hábitos saudáveis e sustentáveis para uma vida mais equilibrada'
+      }
+    ]
+  },
   sectionBenefits: {
     title: 'Entrando para o time você vai receber',
     benefits: [

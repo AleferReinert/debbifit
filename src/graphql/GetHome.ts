@@ -37,6 +37,12 @@ export const GET_HOME = gql`
         linkedin
         whatsapp
       }
+      sectionObjectives {
+        title
+        objectives {
+          objective
+        }
+      }
       sectionBenefits {
         title
         benefits {
