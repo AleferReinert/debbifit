@@ -17,28 +17,35 @@ const SocialLink = ({ url, Icon, title }: SocialLinkProps) => {
   if (!url) return null
   return (
     <Link href={url} target='_blank' title={title} className='group'>
-      <Icon className='size-8 transition group-hover:fill-primary-600' role='img' />
+      <Icon className='size-6 transition group-hover:fill-primary-600' role='img' />
     </Link>
   )
 }
 
-export function Footer({ phone, email, facebook, instagram, linkedin, whatsapp, name }: FooterProps) {
+export function Footer({ phone, email, facebook, instagram, linkedin, whatsapp, name, slogan }: FooterProps) {
   return (
     <footer className='py-6 text-center sm:text-left'>
       <Container>
-        <h4 className='font-semibold mb-2 border-l-2 leading-none pl-2 border-primary-600'>{name}</h4>
+        <h4 className='font-semibold mb-2 leading-none'>
+          <span className='pl-2 border-l-2 border-primary-600'>{name}</span>
+          <span className='font-normal'> - {slogan}</span>
+        </h4>
         <div className='sm:flex justify-between items-center space-y-6'>
-          <div className='space-y-1'>
+          <div className='space-y-1 text-sm'>
             <p>
-              <span className='font-bold'>Tel.: </span>
-              <Link href={`tel:${formatPhone(phone)}`}>{formatPhone(phone)}</Link>
+              <span className='font-semibold'>Tel.: </span>
+              <Link href={`tel:${formatPhone(phone)}`} className='font-light'>
+                {formatPhone(phone)}
+              </Link>
             </p>
             <p>
-              <span className='font-bold'>E-mail: </span>
-              <Link href={`mailto:${email}`}>{email}</Link>
+              <span className='font-semibold'>E-mail: </span>
+              <Link href={`mailto:${email}`} className='font-light'>
+                {email}
+              </Link>
             </p>
           </div>
-          <nav className='space-x-2 inline-flex'>
+          <nav className='space-x-3 inline-flex'>
             <SocialLink title='Facebook' url={facebook} Icon={FaFacebook} />
             <SocialLink title='Instagram' url={instagram} Icon={FaInstagram} />
             <SocialLink title='LinkedIn' url={linkedin} Icon={FaLinkedin} />

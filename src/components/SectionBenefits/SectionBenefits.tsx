@@ -23,7 +23,7 @@ export function SectionBenefits({ title, benefits }: SectionBenefitsProps) {
                 <Image src={benefit.img.url} alt='' fill />
               </div>
               <h3 className='uppercase font-bold mb-1'>{benefit.title}</h3>
-              <p className='lg:font-light'>{benefit.description}</p>
+              <p className='font-light'>{benefit.description}</p>
             </li>
           )
         })}

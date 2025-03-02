@@ -12,7 +12,7 @@ export function setBackgroundImage({ backgroundDesktop, backgroundMobile, wrappe
 
   function setBg(background: ImageProps) {
     wrapper.style.backgroundImage = `url("${background.url}")`
-    console.log('isHorizontal: ', isHorizontal, ', screenWidth: ', screenWidth, ', bg: ', background)
+    // console.log('isHorizontal: ', isHorizontal, ', screenWidth: ', screenWidth, ', bg: ', background)
   }
 
   if (wrapper) {

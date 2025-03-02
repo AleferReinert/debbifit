@@ -1,6 +1,7 @@
 import { Banner, BannerProps } from 'components/Banner/Banner'
 import { Faq, FaqProps } from 'components/Faq/Faq'
 import { Footer } from 'components/Footer/Footer'
+import { SectionAbout, SectionAboutProps } from 'components/SectionAbout/SectionAbout'
 import { SectionBenefits, SectionBenefitsProps } from 'components/SectionBenefits/SectionBenefits'
 import { SectionObjectives, SectionObjectivesProps } from 'components/SectionObjectives/SectionObjectives'
 import { SectionPlans, SectionPlansProps } from 'components/SectionPlans/SectionPlans'
@@ -13,6 +14,7 @@ export interface HomeProps {
   enterprise: EnterpriseProps
   sectionObjectives: SectionObjectivesProps
   sectionBenefits: SectionBenefitsProps
+  sectionAbout: SectionAboutProps
   sectionPlans: SectionPlansProps
   faq: FaqProps
 }
@@ -25,7 +27,8 @@ export default async function Page() {
     throw new Error('Ocorreu um erro ao buscar os dados, tente novamente mais tarde.')
   }
 
-  const { banner, sectionBenefits, sectionObjectives, sectionPlans, faq, enterprise }: HomeProps = data.home
+  const { banner, sectionBenefits, sectionObjectives, sectionAbout, sectionPlans, faq, enterprise }: HomeProps =
+    data.home
 
   return (
     <>
@@ -40,10 +43,12 @@ export default async function Page() {
       />
       <SectionObjectives title={sectionObjectives.title} objectives={sectionObjectives.objectives} />
       <SectionBenefits title={sectionBenefits.title} benefits={sectionBenefits.benefits} />
+      <SectionAbout title={sectionAbout.title} description={sectionAbout.description} />
       <SectionPlans title={sectionPlans.title} showDiscount={sectionPlans.showDiscount} plans={sectionPlans.plans} />
       <Faq title={faq.title} questions={faq.questions} />
       <Footer
         name={enterprise.name}
+        slogan={enterprise.slogan}
         phone={enterprise.phone}
         email={enterprise.email}
         facebook={enterprise.facebook}

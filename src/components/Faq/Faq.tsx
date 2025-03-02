@@ -30,11 +30,13 @@ export function Faq({ title, questions }: FaqProps) {
                 onClick={() => toggleAnswer(index)}
                 className='flex justify-between cursor-pointer items-center py-4'
               >
-                <h3 className='w-max pr-6 font-bold'>{item.question}</h3>
+                <h3 className='w-max pr-6 font-semibold'>
+                  <span className='italic font-light pr-1'>{index + 1}.</span> {item.question}
+                </h3>
                 {open ? <IoChevronUpOutline /> : <IoChevronDownOutline />}
               </div>
               <div className={`${open ? 'max-h-96 transition-all' : 'max-h-0'} overflow-hidden duration-300`}>
-                <p className='px-6'>{item.answer}</p>
+                <p className='px-6 pb-6 pt-2 font-light'>{item.answer}</p>
               </div>
             </li>
           )

@@ -1,15 +1,16 @@
 import { Container } from 'components/Container/Container'
-import { ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 import { replacePTagsWithSpanTags } from 'utils/replacePTagsWithSpanTags'
 
-interface SectionProps {
+interface SectionProps extends ComponentProps<'section'> {
   title: string
   children: ReactNode
+  full?: boolean
 }
 
-export function Section({ children, title }: SectionProps) {
+export function Section({ children, title, full, className, ...rest }: SectionProps) {
   return (
-    <section className='mb-10'>
+    <section className={`${className} mb-10`} {...rest}>
       <Container>
         <h2
           className='
@@ -19,8 +20,9 @@ export function Section({ children, title }: SectionProps) {
 					'
           dangerouslySetInnerHTML={{ __html: replacePTagsWithSpanTags(title) }}
         />
-        {children}
+        {!full && children}
       </Container>
+      {full && children}
     </section>
   )
 }

@@ -189,6 +189,39 @@ export const homeMock: HomeProps = {
       }
     ]
   },
+  sectionAbout: {
+    title: 'Quem sou eu?',
+    img: {
+      alternativeText: 'Igor, seu personal trainer online',
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/about.webp`,
+      width: 1080,
+      height: 1080,
+      formats: {
+        xsmall: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/about-xsmall.webp`,
+          width: 180,
+          height: 180
+        },
+        small: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/about-small.webp`,
+          width: 360,
+          height: 360
+        },
+        medium: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/about-medium.webp`,
+          width: 432,
+          height: 432
+        },
+        large: {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/about-large.webp`,
+          width: 576,
+          height: 576
+        }
+      }
+    },
+    description:
+      'Sou o Igor, personal trainer online, e estou aqui para te ajudar a alcançar seus objetivos de forma prática e eficiente. Com treinos e dietas personalizadas, vou te acompanhar de perto para garantir que você alcance o corpo e a mente dos seus sonhos.'
+  },
   sectionPlans: {
     title: 'Escolha seu plano',
     showDiscount: true,

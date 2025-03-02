@@ -30,6 +30,7 @@ export const GET_HOME = gql`
       }
       enterprise {
         name
+        slogan
         phone
         email
         facebook
@@ -63,6 +64,10 @@ export const GET_HOME = gql`
           description
           url
         }
+      }
+      sectionAbout {
+        title
+        description
       }
       faq {
         title

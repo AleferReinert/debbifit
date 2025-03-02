@@ -22,6 +22,7 @@ const merienda = Merienda({
 
 export interface EnterpriseProps {
   name: string
+  slogan: string
   phone: string
   email: string
   facebook: string | null
@@ -42,27 +43,27 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     throw new Error(`Erro em app/layout.tsx: ${error.message}`)
   }
 
-  const { name, shortDescription, socialShare }: EnterpriseProps = data.home.enterprise
+  const { name, slogan, shortDescription, socialShare }: EnterpriseProps = data.home.enterprise
 
   return (
     <Provider>
       <html lang='pt-BR'>
         <head>
-          <title>{name}</title>
+          <title>{`${name} - ${slogan}`}</title>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='description' content={shortDescription} />
           <meta name='theme-color' content='#000' />
           <meta name='google-site-verification' content='01tG19FkhgIo8cteSWl6WUHYFYCeZywVTSJC6Ua5WGA' />
           <link rel='preconnect' href='https://vercel.live' />
-          <meta name='author' content={name} />
+          <meta name='author' content={`${name} - ${slogan}`} />
           <link rel='canonical' href={process.env.NEXT_PUBLIC_BASE_URL} />
 
-          <meta property='twitter:title' content={name} />
+          <meta property='twitter:title' content={`${name} - ${slogan}`} />
           <meta property='twitter:description' content={shortDescription} />
           <meta property='twitter:image' content={socialShare.url} />
           <meta property='twitter:card' content='summary_large_image' />
-          <meta property='og:title' content={name} />
-          <meta property='og:site_name' content={name} />
+          <meta property='og:title' content={`${name} - ${slogan}`} />
+          <meta property='og:site_name' content={`${name} - ${slogan}`} />
           <meta property='og:description' content={shortDescription} />
           <meta property='og:type' content='website' />
           <meta property='og:url' content={process.env.NEXT_PUBLIC_BASE_URL} />

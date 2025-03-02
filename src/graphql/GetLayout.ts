@@ -5,6 +5,7 @@ export const GET_LAYOUT = gql`
     home {
       enterprise {
         name
+        slogan
         socialShare {
           url
         }

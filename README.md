@@ -81,20 +81,4 @@ npm run plop
 
 ## URL do Projeto
 
-Explore o projeto no link: [Consultoria Fitness](https://consultoria-fitness-online.vercel.app).
-
-## Registro de performance de Banner em celular
-
-Com sizes em <Image /> e server component sem fetch: 90%
-Sem sizes em <Image /> e server component sem fetch: 92%
-Sem sizes e quality 100 em <Image /> e server component sem fetch: 92%
-Sem componente <Image />: 94%
-Sem componente <Image /> e sem background: 99%
-Sem componente <Image /> e com background xsmall: 96%
-Sem background e floatImg como client component: 95%
-
-em produção: 29 de nov. de 2024, 11:17:37: 92%
-
-feat(Banner, BannerImages): create background mobile: 93
-feat(Banner): remove client component bannerimages: 90
-feat(Banner): re-add client component and refactor replace tags function: 92
+Explore o projeto no link: [Consultoria Fitness](https://debbifit.vercel.app).
