@@ -1,5 +1,5 @@
 {
-  "name": "consultoria-fitness",
+  "name": "debbifit",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -63,5 +63,5 @@
     }
   },
   "readme": "ERROR: No README data found!",
-  "_id": "consultoria-fitness@1.0.0"
+  "_id": "debbifit@1.0.0"
 }

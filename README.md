@@ -1,4 +1,4 @@
-# Consultoria Fitness
+# DebbiFit
 
 Landing page para consultoria fitness online.
 
@@ -6,11 +6,11 @@ Landing page para consultoria fitness online.
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/aleferreinert/consultoria-fitness.git
+   git clone https://github.com/aleferreinert/debbifit.git
    ```
 2. Entre no diretório do projeto:
    ```
-   cd consultoria-fitness
+   cd debbifit
    ```
 3. Instale as dependências:
    ```
@@ -81,4 +81,4 @@ npm run plop
 
 ## URL do Projeto
 
-Explore o projeto no link: [Consultoria Fitness](https://debbifit.vercel.app).
+Explore o projeto no link: [DebbiFit](https://debbifit.vercel.app).
