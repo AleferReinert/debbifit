@@ -24,6 +24,10 @@ export const Default: Story = {
       const name = canvas.getByRole('heading', { level: 4 })
       expect(name).toHaveTextContent(args.name)
     })
+    await step('Slogan', () => {
+      const name = canvas.getByRole('heading', { level: 4 })
+      expect(name).toHaveTextContent(args.slogan)
+    })
 
     await step('Phone', () => {
       const phone = canvas.getByRole('link', { name: formatPhone(args.phone) })
