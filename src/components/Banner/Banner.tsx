@@ -28,6 +28,7 @@ export function Banner({ title, description, label, url, backgroundDesktop, back
           src={backgroundDesktop.url}
           alt={backgroundMobile.alternativeText || backgroundDesktop.alternativeText || 'Imagem de fundo decorativa'}
           aria-hidden={backgroundMobile.alternativeText || backgroundDesktop.alternativeText ? false : true}
+          sizes='100vw'
         />
       </picture>
 
@@ -45,7 +46,7 @@ export function Banner({ title, description, label, url, backgroundDesktop, back
             />
 
             <ButtonLink href={url}>
-              <IoFitness className='size-6' />
+              <IoFitness className='size-6' aria-hidden />
               {label}
             </ButtonLink>
           </div>
