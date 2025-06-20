@@ -15,8 +15,8 @@ export function SectionObjectives({ title, objectives }: SectionObjectivesProps)
         {objectives.map((objective, index) => {
           return (
             <li key={index} className='flex gap-3 items-center'>
-              <IoCheckmarkCircle className='text-green-400' size={20} />
-              {objective.objective}
+              <IoCheckmarkCircle className='text-green-400 min-w-5' size={20} aria-hidden />
+              <span>{objective.objective}</span>
             </li>
           )
         })}
