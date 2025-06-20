@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "plop": "plop",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "test-storybook",
+    "test-storybook": "test-storybook",
     "prettier": "prettier . --write",
     "prepare": "husky",
     "chromatic": "chromatic"
@@ -28,8 +27,6 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@commitlint/cz-commitlint": "^19.5.0",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
     "@storybook/addon-links": "^8.4.4",
@@ -43,24 +40,16 @@
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.20",
     "chromatic": "^11.26.1",
-    "commitizen": "^4.3.1",
-    "commitlint": "^19.5.0",
     "eslint": "^9.15.0",
     "eslint-config-next": "^15.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-storybook": "^0.11.0",
     "husky": "^9.1.7",
-    "plop": "^4.0.1",
     "postcss": "^8.4.49",
     "prettier": "3.3.3",
     "storybook": "^8.4.4",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
   },
   "readme": "ERROR: No README data found!",
   "_id": "debbifit@1.0.0"
