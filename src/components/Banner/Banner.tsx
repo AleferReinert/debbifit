@@ -20,6 +20,7 @@ export function Banner({ title, description, label, url, backgroundDesktop, back
     alt: backgroundMobile.alternativeText || backgroundDesktop.alternativeText || 'Imagem de fundo decorativa',
     sizes: '100vw',
     fill: true,
+    priority: true,
     'aria-hidden': backgroundMobile.alternativeText || backgroundDesktop.alternativeText ? false : true
   }
   const {
