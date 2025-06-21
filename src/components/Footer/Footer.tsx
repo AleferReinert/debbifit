@@ -16,8 +16,8 @@ export interface SocialLinkProps {
 const SocialLink = ({ url, Icon, title }: SocialLinkProps) => {
   if (!url) return null
   return (
-    <Link href={url} target='_blank' title={title} className='group'>
-      <Icon className='size-6 transition group-hover:fill-primary-600' role='img' />
+    <Link href={url} target='_blank' title={title} className='group hover:bg-primary-600 p-1 rounded-md'>
+      <Icon className='size-6 transition group-hover:scale-[.8]' role='img' />
     </Link>
   )
 }
@@ -45,7 +45,7 @@ export function Footer({ phone, email, facebook, instagram, linkedin, whatsapp, 
               </Link>
             </p>
           </div>
-          <nav className='space-x-3 inline-flex'>
+          <nav className='gap-1.5 inline-flex'>
             <SocialLink title='Facebook' url={facebook} Icon={FaFacebook} />
             <SocialLink title='Instagram' url={instagram} Icon={FaInstagram} />
             <SocialLink title='LinkedIn' url={linkedin} Icon={FaLinkedin} />
