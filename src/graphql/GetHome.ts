@@ -8,19 +8,16 @@ export const GET_HOME = gql`
           url
           width
           height
-          formats
         }
         backgroundMobile {
           url
           width
           height
-          formats
         }
         floatImg {
           url
           width
           height
-          formats
           alternativeText
         }
         title

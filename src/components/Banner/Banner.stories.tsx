@@ -62,7 +62,7 @@ export const XSmall: Story = {
     await step('Background mobile small', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.formats.small.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.url}")`)
       })
     })
   }
@@ -85,7 +85,7 @@ export const Small: Story = {
     await step('Background desktop small', () => {
       waitFor(() => {
         const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.formats.small.url}")`)
+        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.url}")`)
       })
     })
   }
@@ -103,7 +103,7 @@ export const Medium: Story = {
         // Se tiver o texto alternativo, aria-hidden é false, se não, true
         if (bannerMock.floatImg.alternativeText) {
           const floatImgWithAlternativeText = canvas.getByRole('img')
-          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.formats.small.url)
+          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.url)
           expect(floatImgWithAlternativeText).toHaveAttribute('alt', bannerMock.floatImg.alternativeText)
           expect(floatImgWithAlternativeText).toHaveAttribute('aria-hidden', 'false')
         } else {

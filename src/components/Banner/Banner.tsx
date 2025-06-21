@@ -2,7 +2,7 @@ import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
 import Image from 'next/image'
 import { IoFitness } from 'react-icons/io5'
-import { UploadImageProps } from 'types/strapiContent'
+import { ImageProps } from 'types/strapiContent'
 import { replacePTagsWithSpanTags } from 'utils/replacePTagsWithSpanTags'
 
 export interface BannerProps {
@@ -10,9 +10,9 @@ export interface BannerProps {
   description: string
   label: string
   url: string
-  floatImg: UploadImageProps
-  backgroundDesktop: UploadImageProps
-  backgroundMobile: UploadImageProps
+  floatImg: ImageProps
+  backgroundDesktop: ImageProps
+  backgroundMobile: ImageProps
 }
 
 export function Banner({ title, description, label, url, backgroundDesktop, backgroundMobile, floatImg }: BannerProps) {
@@ -54,7 +54,7 @@ export function Banner({ title, description, label, url, backgroundDesktop, back
         <div className='hidden md:flex items-end w-2/5'>
           <Image
             aria-hidden={floatImg.alternativeText ? false : true}
-            src={floatImg.formats.small.url}
+            src={floatImg.url}
             alt={floatImg.alternativeText || ''}
             width={floatImg.width}
             height={floatImg.height}

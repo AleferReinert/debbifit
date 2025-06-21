@@ -23,94 +23,18 @@ export const bannerMock: BannerProps = {
   backgroundDesktop: {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop.webp`,
     width: 1920,
-    height: 1080,
-    formats: {
-      xsmall: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop-xsmall.webp`,
-        width: 320,
-        height: 180
-      },
-      small: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop-small.webp`,
-        width: 640,
-        height: 360
-      },
-      medium: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop-medium.webp`,
-        width: 768,
-        height: 432
-      },
-      large: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop-large.webp`,
-        width: 1024,
-        height: 576
-      },
-      xlarge: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop-xlarge.webp`,
-        width: 1280,
-        height: 720
-      }
-    }
+    height: 1080
   },
   backgroundMobile: {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile.webp`,
     width: 1080,
-    height: 1920,
-    formats: {
-      xsmall: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile-xsmall.webp`,
-        width: 180,
-        height: 320
-      },
-      small: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile-small.webp`,
-        width: 360,
-        height: 640
-      },
-      medium: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile-medium.webp`,
-        width: 432,
-        height: 768
-      },
-      large: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile-large.webp`,
-        width: 576,
-        height: 1024
-      },
-      xlarge: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile-xlarge.webp`,
-        width: 720,
-        height: 1280
-      }
-    }
+    height: 1920
   },
   floatImg: {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
     width: 768,
     height: 735,
-    alternativeText: 'Mulher fazendo exercícios',
-    formats: {
-      xsmall: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-xsmall.webp`,
-        width: 256,
-        height: 320
-      },
-      small: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-small.webp`,
-        width: 512,
-        height: 640
-      },
-      medium: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-medium.webp`,
-        width: 614,
-        height: 768
-      },
-      large: {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg-large.webp`,
-        width: 819,
-        height: 1024
-      }
-    }
+    alternativeText: 'Mulher fazendo exercícios'
   },
   title: '<p><i>Invista na sua saúde&nbsp;</i></p><p><i><strong>física </strong>e <strong>mental!</strong></i></p>',
   description:
