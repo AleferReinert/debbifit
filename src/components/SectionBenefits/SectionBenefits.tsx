@@ -19,7 +19,7 @@ export function SectionBenefits({ title, benefits }: SectionBenefitsProps) {
         {benefits.map((benefit, index) => {
           return (
             <li key={index}>
-              <div className='relative w-full aspect-video mb-6'>
+              <div className='relative w-full aspect-video mb-6 border border-primary-600/50'>
                 <Image
                   src={benefit.img.url}
                   alt=''
