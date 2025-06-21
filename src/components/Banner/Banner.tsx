@@ -1,6 +1,6 @@
 import { ButtonLink } from 'components/ButtonLink/ButtonLink'
 import { Container } from 'components/Container/Container'
-import Image from 'next/image'
+import Image, { getImageProps } from 'next/image'
 import { IoFitness } from 'react-icons/io5'
 import { ImageProps } from 'types/strapiContent'
 import { replacePTagsWithSpanTags } from 'utils/replacePTagsWithSpanTags'
@@ -16,20 +16,34 @@ export interface BannerProps {
 }
 
 export function Banner({ title, description, label, url, backgroundDesktop, backgroundMobile, floatImg }: BannerProps) {
+  const common = {
+    alt: backgroundMobile.alternativeText || backgroundDesktop.alternativeText || 'Imagem de fundo decorativa',
+    sizes: '100vw',
+    fill: true,
+    'aria-hidden': backgroundMobile.alternativeText || backgroundDesktop.alternativeText ? false : true
+  }
+  const {
+    props: { srcSet: desktop }
+  } = getImageProps({
+    ...common,
+    src: backgroundDesktop.url
+  })
+  const {
+    props: { srcSet: mobile, ...rest }
+  } = getImageProps({
+    ...common,
+    src: backgroundMobile.url
+  })
   return (
     <section
       id='banner'
       data-testid='BannerComponent'
       className='flex items-center relative bg-cover aspect-[9/16] sm:aspect-video'
     >
-      <picture className='absolute top-0 left-0 right-0'>
-        <source media='(max-width: 639px)' srcSet={backgroundMobile.url} />
-        <img
-          src={backgroundDesktop.url}
-          alt={backgroundMobile.alternativeText || backgroundDesktop.alternativeText || 'Imagem de fundo decorativa'}
-          aria-hidden={backgroundMobile.alternativeText || backgroundDesktop.alternativeText ? false : true}
-          sizes='100vw'
-        />
+      <picture className='absolute size-full inset-0'>
+        <source media='(max-width: 639px)' srcSet={mobile} />
+        <source media='(min-width: 640px)' srcSet={desktop} />
+        <img {...rest} />
       </picture>
 
       <Container className='relative flex gap-10 h-full'>
