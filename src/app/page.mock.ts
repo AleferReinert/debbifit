@@ -164,28 +164,28 @@ export const homeMock: HomeProps = {
         title: 'Treino Personalizado',
         description: 'Protocolo de treino com as bases que utilizo, podendo ser executa em qualquer academia',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit.webp`
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit1.webp`
         }
       },
       {
         title: 'Dieta e Nutricionista',
         description: 'Plano de dieta individualizado sem firulas, com valores que cabem no seu bolso',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit.webp`
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit2.webp`
         }
       },
       {
         title: 'Suporte Integral',
         description: 'Acompanhamento diário no Whatsapp comigo e minha equipe de profissionais',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit.webp`
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit3.webp`
         }
       },
       {
         title: 'Avaliação Mensal',
         description: 'Chamadas semanais para avaliar o resultado do pessoal e muito networking',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit.webp`
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit4.webp`
         }
       }
     ]
