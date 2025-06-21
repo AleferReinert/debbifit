@@ -9,6 +9,8 @@ import { GET_HOME } from 'graphql/GetHome'
 import { client } from 'utils/client'
 import { EnterpriseProps } from './layout'
 
+export const revalidate = 0
+
 export interface HomeProps {
   banner: BannerProps
   enterprise: EnterpriseProps
