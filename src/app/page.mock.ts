@@ -11,7 +11,7 @@ export const enterpriseMock: EnterpriseProps = {
   shortDescription:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus amet as.',
   socialShare: {
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/social-share.webp`
+    url: '/social-share.webp'
   },
   facebook: 'https://facebook.com',
   instagram: 'https://instagram.com',
@@ -21,20 +21,20 @@ export const enterpriseMock: EnterpriseProps = {
 
 export const bannerMock: BannerProps = {
   backgroundDesktop: {
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundDesktop.webp`,
+    url: '/tests/backgroundDesktop.webp',
     width: 1920,
     height: 1080
   },
   backgroundMobile: {
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/backgroundMobile.webp`,
-    width: 1080,
-    height: 1920
+    url: '/tests/backgroundMobile.webp',
+    width: 640,
+    height: 1138
   },
   floatImg: {
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/floatImg.webp`,
+    url: '/tests/floatImg.webp',
     width: 768,
     height: 735,
-    alternativeText: 'Mulher fazendo exercícios'
+    alternativeText: 'floatImg'
   },
   title: '<p><i>Invista na sua saúde&nbsp;</i></p><p><i><strong>física </strong>e <strong>mental!</strong></i></p>',
   description:
@@ -50,34 +50,28 @@ export const homeMock: HomeProps = {
     title: 'Somos para você que quer...',
     objectives: [
       {
-        objective: 'Descobrir uma nova maneira de amar o fitness e integrá-lo ao seu dia a dia com alegria'
+        objective: 'Aprender a amar o fitness e saber como encaixa-lo em uma vida feliz'
       },
       {
-        objective: 'Transformar não só o corpo, mas também a mente, com resultados duradouros'
+        objective: 'Conquistar resultados físicos e mentais'
       },
       {
-        objective: 'Ter orientação personalizada que te apoie em cada etapa da sua jornada'
+        objective: 'Ter alguém acompanhando de perto a sua evolução e segurando sua mão durante o processo inteiro'
       },
       {
-        objective: 'Vencer barreiras e alcançar resultados que antes pareciam impossíveis'
+        objective: 'Se frustou tentando perder gordura ou ganhar massa muscular e não teve sucesso'
       },
       {
-        objective: 'Adotar treinos criativos e diversificados, adaptados ao seu estilo de vida'
+        objective: 'Está cansado(a) de seguir dietas restritivas que não funcionam no longo prazo'
       },
       {
-        objective: 'Fortalecer não só os músculos, mas também a autoestima e confiança'
+        objective: 'Precisa de um plano que se adapte à sua rotina, e não o contrário'
       },
       {
-        objective: 'Receber dicas exclusivas e atualizações frequentes para inovar nos treinos'
+        objective: 'Já tentou sozinho(a), mas sente que falta direcionamento e consistência'
       },
       {
-        objective: 'Reencontrar o prazer de se alimentar bem, sem dietas restritivas ou sofrimento'
-      },
-      {
-        objective: 'Fazer parte de uma comunidade vibrante, cheia de pessoas que compartilham os mesmos objetivos'
-      },
-      {
-        objective: 'Construir hábitos saudáveis e sustentáveis para uma vida mais equilibrada'
+        objective: 'Busca melhorar a autoestima e a confiança no próprio corpo'
       }
     ]
   },
@@ -85,39 +79,42 @@ export const homeMock: HomeProps = {
     title: 'Entrando para o time você vai receber',
     benefits: [
       {
-        title: 'Treino Personalizado',
-        description: 'Protocolo de treino com as bases que utilizo, podendo ser executa em qualquer academia',
+        title: 'Treinos Personalizados',
+        description: 'Protocolo de treino que pode ser executado em qualquer academia.',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit1.webp`
+          url: '/tests/benefit1.webp'
         }
       },
       {
-        title: 'Dieta e Nutricionista',
-        description: 'Plano de dieta individualizado sem firulas, com valores que cabem no seu bolso',
+        title: 'Dieta e Nutrição',
+        description: 'Plano de dieta individualizado com valores que cabem no seu bolso.',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit2.webp`
+          url: '/tests/benefit2.webp'
         }
       },
       {
         title: 'Suporte Integral',
-        description: 'Acompanhamento diário no Whatsapp comigo e minha equipe de profissionais',
+        description: 'Acompanhamento diário com uma equipe de profissionais.',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit3.webp`
+          url: '/tests/benefit3.webp'
         }
       },
       {
         title: 'Avaliação Mensal',
-        description: 'Chamadas semanais para avaliar o resultado do pessoal e muito networking',
+        description: 'Chamadas semanais para avaliar seu progresso e resultados.',
         img: {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL}/tests/benefit4.webp`
+          url: '/tests/benefit4.webp'
         }
       }
     ]
   },
   sectionAbout: {
     title: 'Quem sou eu?',
-    description:
-      '<p>Sou a Debbi, personal trainer online, e estou aqui para te ajudar a alcançar seus objetivos de forma prática e eficiente. Com treinos e dietas personalizadas, vou te acompanhar de perto para garantir que você alcance o corpo e a mente dos seus sonhos.</p>'
+    description: `<p>
+				Debbi é uma personal trainer profissional apaixonada por ajudar pessoas a se sentirem mais fortes e confiantes.
+				Com disciplina e dedicação, ela acredita que a constância e o equilíbrio são fundamentais para uma vida saudável.
+				Seu compromisso vai além do treino, inspirando mudanças que refletem no bem-estar físico e mental.
+			</p>`
   },
   sectionPlans: {
     title: 'Escolha seu plano',
@@ -150,24 +147,44 @@ export const homeMock: HomeProps = {
     title: 'Perguntas Frequentes',
     questions: [
       {
-        question: 'É tudo personalizado?',
+        question: 'Como é feita a avaliação inicial?',
         answer:
-          'Sim, ao entrar vamos pedir que nos envie tudo como funciona sua rotina e hábitos, baseado em suas respostas vamos montar seu protocolo.'
+          'A avaliação inicial é feita através de um questionário detalhado e, em alguns casos, com uma chamada de vídeo. Assim, conseguimos entender seu histórico, objetivos e necessidades.'
       },
       {
-        question: 'Os treinos renovam mensalmente?',
+        question: 'Preciso de equipamentos para treinar?',
         answer:
-          'Sim, todos os treinos e dietas serão alterados de acordo com a necessidade a cada 30 dias após nossa avaliação.'
+          'Não necessariamente. Os treinos podem ser adaptados para serem feitos em casa, ao ar livre ou em academias, com ou sem equipamentos, de acordo com o que você tem disponível.'
       },
       {
-        question: 'Por onde poderei tirar minhas dúvidas?',
+        question: 'Posso cancelar ou pausar a consultoria?',
         answer:
-          'Disponibilizamos um número de Whatsapp exclusivo para alunos do Time, onde poderão tirar todas as suas referentes a treino e dieta.'
+          'Sim, você pode pausar ou cancelar a consultoria. Informe-nos com antecedência, e ajustaremos o seu plano conforme necessário.'
       },
       {
-        question: 'Tenho restrição física. A consultoria é pra mim?',
+        question: 'Inclui acompanhamento nutricional?',
         answer:
-          'Sim, pedimos que nos conte com detalhe ao entrar para o time qual a sua restrição, para que possamos ter o cuidado necessário para direcionar a melhor estratégia para você!'
+          'Sim. O plano inclui orientações alimentares adaptadas à sua realidade e objetivos. Se necessário, indicamos um nutricionista parceiro para um acompanhamento mais aprofundado.'
+      },
+      {
+        question: 'Com que frequência terei contato com o profissional?',
+        answer:
+          'O acompanhamento é contínuo, com respostas rápidas via WhatsApp, e revisões semanais por mensagem ou chamada, conforme o plano contratado.'
+      },
+      {
+        question: 'É necessário ter experiência com treino?',
+        answer:
+          'Não. A consultoria é feita sob medida tanto para iniciantes quanto para pessoas mais experientes. O plano é adaptado ao seu nível.'
+      },
+      {
+        question: 'E se eu tiver alguma limitação física ou lesão?',
+        answer:
+          'Todos os treinos são personalizados. Caso você tenha alguma limitação, o planejamento é ajustado para garantir sua segurança e evolução.'
+      },
+      {
+        question: 'Como recebo os treinos e atualizações?',
+        answer:
+          'Você receberá tudo organizado por aplicativo ou planilha, com vídeos demonstrativos e instruções claras. As atualizações são feitas conforme seu progresso.'
       }
     ]
   }

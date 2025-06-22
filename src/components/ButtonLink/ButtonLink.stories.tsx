@@ -9,6 +9,9 @@ const meta: Meta<typeof ButtonLink> = {
   args: {
     children: bannerMock.label,
     href: bannerMock.url
+  },
+  parameters: {
+    layout: 'padded'
   }
 }
 

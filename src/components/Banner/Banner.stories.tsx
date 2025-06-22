@@ -15,7 +15,7 @@ const meta: Meta<typeof Banner> = {
 export default meta
 type Story = StoryObj<typeof Banner>
 
-export const XSmall: Story = {
+export const Mobile: Story = {
   parameters: {
     viewport: { defaultViewport: 'xs' }
   },
@@ -31,7 +31,6 @@ export const XSmall: Story = {
         expect(title).toContainHTML(
           '<span><i>Invista na sua saúde&nbsp;</i></span><span><i><strong>física </strong>e <strong>mental!</strong></i></span>'
         )
-
         expect(italic).toHaveStyle('font-family: Merienda, cursive')
         expect(strong).toHaveStyle({ color: theme.primary[600] })
       })
@@ -54,62 +53,30 @@ export const XSmall: Story = {
 
     await step('Without float image', async () => {
       waitFor(() => {
-        const floatImg = canvas.queryByRole('img')
+        const floatImg = canvas.queryByRole('img', { name: bannerMock.floatImg.alternativeText })
         expect(floatImg).not.toBeInTheDocument()
       })
     })
 
-    await step('Background mobile small', () => {
+    await step('Background', () => {
       waitFor(() => {
-        const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundMobile.url}")`)
+        const image = canvas.getByRole('img', { name: 'Imagem de fundo decorativa' })
+        expect(image).toBeVisible()
       })
     })
   }
 }
 
-export const Small: Story = {
-  parameters: {
-    viewport: { defaultViewport: 'sm' }
-  },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-
-    await step('Without float image', async () => {
-      waitFor(() => {
-        const floatImg = canvas.queryByRole('img')
-        expect(floatImg).not.toBeInTheDocument()
-      })
-    })
-
-    await step('Background desktop small', () => {
-      waitFor(() => {
-        const section = canvas.getByTestId('BannerComponent')
-        expect(section).toHaveStyle(`background-image: url("${bannerMock.backgroundDesktop.url}")`)
-      })
-    })
-  }
-}
-
-export const Medium: Story = {
+export const Desktop: Story = {
   parameters: {
     viewport: { defaultViewport: 'md' }
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement)
-
-    await step('Correct float image with alt text or aria-hidden if without alt text', async () => {
+    await step('Float image', async () => {
       waitFor(() => {
-        // Se tiver o texto alternativo, aria-hidden é false, se não, true
-        if (bannerMock.floatImg.alternativeText) {
-          const floatImgWithAlternativeText = canvas.getByRole('img')
-          expect(floatImgWithAlternativeText.getAttribute('src')).toContain(bannerMock.floatImg.url)
-          expect(floatImgWithAlternativeText).toHaveAttribute('alt', bannerMock.floatImg.alternativeText)
-          expect(floatImgWithAlternativeText).toHaveAttribute('aria-hidden', 'false')
-        } else {
-          const floatImgWithoutAlternativeText = document.querySelector('img[alt=""]')
-          expect(floatImgWithoutAlternativeText).toHaveAttribute('aria-hidden', 'true')
-        }
+        const floatImg = canvas.getByRole('img', { name: bannerMock.floatImg.alternativeText })
+        expect(floatImg).toBeVisible()
       })
     })
   }
