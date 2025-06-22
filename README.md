@@ -53,4 +53,5 @@ Landing page para consultoria fitness online.
 - **Prettier:** Formatador de código opinativo que garante um estilo consistente de código.
 - **Storybook:** Ferramenta de desenvolvimento para construir e testar componentes de interface de usuário de forma isolada.
 - **Tailwind CSS:** Framework de utilidades CSS para estilização rápida e eficiente.
+- **TestingLibrary:** Ferramenta para testes unitários.
 - **TypeScript:** Superconjunto de JavaScript que adiciona tipagem estática ao código.
