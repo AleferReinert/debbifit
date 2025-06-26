@@ -46,7 +46,7 @@ export const Default: Story = {
       socialLinks.forEach((social, index) => {
         const link = canvas.getByRole('link', { name: new RegExp(`^${social}$`, 'i') })
         const url = social === 'whatsapp' ? `https://wa.me/55${args.whatsapp}` : args[socialLinks[index]]
-        expect(within(link).getByRole('img')).toBeVisible()
+        expect(within(link).getByRole('img', { hidden: true })).toBeVisible()
         expect(link).toHaveAttribute('href', url)
       })
     })

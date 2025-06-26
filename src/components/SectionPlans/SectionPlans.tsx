@@ -25,14 +25,7 @@ export function SectionPlans({ title, showDiscount, plans }: SectionPlansProps) 
           return (
             <li key={index} className='border-2 border-primary-600 rounded-xl text-center p-8 relative'>
               <h3 className='text-2xl font-bold mb-6 uppercase md:px-3 lg:px-0'>{plan.title}</h3>
-              {/* <div className='mb-1 md:h-8'>
-                {plan.discount && (
-                  <p aria-label='Preço antigo sem desconto' className='line-through text-2xl text-neutral-400'>
-                    {formatPrice(plan.price, null)}
-                  </p>
-                )}
-              </div> */}
-              <p aria-label='Preço atual' className='text-5xl font-black mb-6'>
+              <p className='text-5xl font-black mb-6'>
                 {formatPrice(plan.price, plan.discount)}
                 <span className='text-xl font-light'> /mês</span>
               </p>

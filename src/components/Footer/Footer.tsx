@@ -17,7 +17,7 @@ const SocialLink = ({ url, Icon, title }: SocialLinkProps) => {
   if (!url) return null
   return (
     <Link href={url} target='_blank' title={title} className='group hover:bg-primary-600 p-1 rounded-md'>
-      <Icon className='size-6 transition group-hover:scale-[.8]' role='img' />
+      <Icon className='size-6 transition group-hover:scale-[.8]' role='img' aria-hidden />
     </Link>
   )
 }
